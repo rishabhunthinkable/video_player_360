@@ -6,8 +6,8 @@ class VideoPlayer360 {
   static const MethodChannel _channel =
       const MethodChannel('innov.lab/video_player_360');
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
+  static Future<String?> get platformVersion async {
+    final String? version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
 
@@ -21,7 +21,7 @@ class VideoPlayer360 {
   /// @param columns Number of columns that make up the sphere. Must be >= 1.
   ///
 
-  static Future<void> playVideoURL(
+  static Future<Map<dynamic,dynamic>?> playVideoURL(
     String url, {
     int radius = 50,
     int verticalFov = 180,
